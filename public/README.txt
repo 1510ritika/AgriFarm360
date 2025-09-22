@@ -1,0 +1,1 @@
+Place your hero image as /public/goats-placeholder.jpg and product images in /public/
