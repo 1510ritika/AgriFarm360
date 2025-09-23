@@ -4,13 +4,10 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: '/agrifarm360/',  
+  base: '/',   // ✅ for custom domain use root
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  },
-  build: {
-    outDir: "docs", // output folder for GitHub Pages
   },
 });
