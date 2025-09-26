@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
-    <section className="container-max py-10">
-      <h1 className="text-3xl font-bold">Contact Us</h1>
+    <section className="container-max py-10 mt-24">
+  <h1 className="text-3xl font-bold  text-green-700">Contact Us</h1>
       <div className="grid md:grid-cols-2 gap-8 mt-6">
         
         {/* Contact Info */}

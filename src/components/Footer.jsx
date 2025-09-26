@@ -13,9 +13,8 @@ export default function Footer() {
           <div className="font-semibold mb-2">Contact</div>
           <p>📍 Kotyal road, opp. HP Gas, near Kencharayanna Gudi, Kanamadi, Vijayapura</p>
           <p>📍 Plot no 37, Sankeshwar villa layout, Second main near Varasidhi vinayak temple, Athani road, Vijayapura  586108</p>
-          <p>👨‍🌾 Owner: Satish B Patil — 9620313227</p>
-          <p>🐐 Farm Manager: Mallu Tuppad — 8660570728</p>
-          <p>🌾 Agri Manager: Mahantesh — 6363475984</p>
+          <p>👨‍🌾 Owner: Satish B Patil(Kanamadi) ph: 9620313227</p>
+          <p>🐐 Farm Manager: Mallu Tuppad ph: 8660570728</p>
           <div className="mt-2">
           <a
   href="https://www.google.com/maps/dir/?api=1&destination=Shri+Kencharaya+Temple,+Kanamadi,+Karnataka+586114"

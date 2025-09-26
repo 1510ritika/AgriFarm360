@@ -1,5 +1,3 @@
-// src/data/organicPapaya.js
-
 // Import images and videos
 import papaya1 from "../assets/papaya1.jpg";
 import papaya2 from "../assets/papaya2.jpg";
@@ -16,24 +14,22 @@ import papayaVideo3 from "../assets/papaya-video3.mp4";
 const organicPapaya = [
   {
     name: "Organic Papaya",
+    images: [papaya1, papaya2, papaya3, papaya4, papaya5, papaya6, papaya7],
+    videos: [papayaVideo1, papayaVideo2, papayaVideo3],
     description: {
-      "Forms Available": "Whole fruit and diced cubes",
+      "Forms Available": "Whole fruit",
       "Packing Size": "1 kg pack, 5 kg bulk pack",
       "Health Benefits":
         "Rich in vitamins A, C, and E, aids digestion, boosts immunity, and promotes healthy skin.",
       "Other Benefits":
         "Organic papaya is free from pesticides, grown naturally, and supports sustainable farming.",
     },
-    images: [
-      papaya1,
-      papaya2,
-      papaya3,
-      papaya4,
-      papaya5,
-      papaya6,
-      papaya7,
+    benefits: [
+      "Boosts immunity",
+      "Rich in antioxidants",
+      "Supports digestion",
+      "Promotes healthy skin",
     ],
-    videos: [papayaVideo1, papayaVideo2, papayaVideo3],
   },
 ];
 

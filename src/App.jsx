@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { FaWhatsapp } from "react-icons/fa";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import FloatingButtons from "./components/FloatingButtons";
 
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -18,11 +18,6 @@ function App() {
 
   const openEnquiryModal = (product) => setEnquiryProduct(product);
   const closeEnquiryModal = () => setEnquiryProduct(null);
-
-  const whatsappNumber = "918073684699";
-  const whatsappMessage = enquiryProduct
-    ? `Hello! I am interested in: ${enquiryProduct.name || enquiryProduct}`
-    : "";
 
   return (
     <div className="flex flex-col min-h-screen relative">
@@ -45,20 +40,8 @@ function App() {
       {/* Footer */}
       <Footer />
 
-      {/* WhatsApp Floating Button */}
-      <div className="fixed bottom-8 right-8 group z-50">
-        <a
-          href={`https://wa.me/${whatsappNumber}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-green-500 text-white p-5 rounded-full shadow-lg hover:bg-green-600 transition duration-300 animate-pulseSlow flex items-center justify-center"
-        >
-          <FaWhatsapp size={40} />
-        </a>
-        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 bg-gray-800 text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          Chat with us on WhatsApp
-        </span>
-      </div>
+      {/* Floating YouTube & WhatsApp Buttons */}
+      <FloatingButtons />
 
       {/* Enquiry Modal */}
       {enquiryProduct && (
@@ -82,7 +65,9 @@ function App() {
                 Call
               </a>
               <a
-                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+                href={`https://wa.me/918073684699?text=${encodeURIComponent(
+                  `Hello! I am interested in: ${enquiryProduct.name || enquiryProduct}`
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"

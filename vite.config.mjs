@@ -4,10 +4,11 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',   // ✅ for custom domain use root
+  base: '/',
+  build: {
+    outDir: 'docs',
+  },
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+    alias: { "@": path.resolve(__dirname, "./src") },
   },
 });

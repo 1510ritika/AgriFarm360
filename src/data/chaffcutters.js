@@ -11,7 +11,7 @@ import cc11 from "../assets/cc15.png"; // 5 HP Double Blower RF Gear Engine Oper
 // ==================== PRODUCTS ====================
 const chaffcutters = [
   {
-    name: "Chaffcutter – Flat Face Horizontal (Motor Operated, BRP - CC - 2HP - 01)",
+    name: "Chaffcutter – Flat Face Horizontal (Motor Operated)",
     image: cc1,
     description: {
       type: "Motor Operated",
@@ -41,7 +41,7 @@ const chaffcutters = [
   },
 
     {
-    name: "Chaffcutter – Flat Face Horizontal Gokul Model (Motor Operated, BRP - CC - 3HP - 01)",
+    name: "Chaffcutter – Flat Face Horizontal Gokul Model (Motor Operated)",
     image: cc4,
     description: {
       type: "Motor Operated",
@@ -70,7 +70,7 @@ const chaffcutters = [
     },
   },
   {
-    name: "Chaffcutter – Short Box Model (Motor Operated, BRP - CC - 2HP - 02)",
+    name: "Chaffcutter – Short Box Model (Motor Operated)",
     image: cc2,
     description: {
       type: "Motor Operated",
@@ -100,7 +100,7 @@ const chaffcutters = [
   },
 
   {
-    name: "Chaffcutter – Short Box Model (Motor Operated, BRP - CC - 3HP - 02)",
+    name: "Chaffcutter – Short Box Model (Motor Operated)",
     image: cc5,
     description: {
       type: "Motor Operated",
@@ -129,7 +129,7 @@ const chaffcutters = [
     },
   },
   {
-    name: "Chaffcutter – Mini Heavy Duty Model (Motor Operated, BRP - CC - 3HP - 03)",
+    name: "Chaffcutter – Mini Heavy Duty Model (Motor Operated)",
     image: cc6,
     description: {
       type: "Motor Operated",
@@ -159,7 +159,7 @@ const chaffcutters = [
   },
 
   {
-    name: "Chaffcutter – Reverse Forward Heavy Duty Front Fall (Motor Operated, BRP - CC - 5HP - 01)",
+    name: "Chaffcutter – Reverse Forward Heavy Duty Front Fall (Motor Operated)",
     image: cc9,
     description: {
       type: "Motor Operated",
@@ -188,7 +188,7 @@ const chaffcutters = [
     },
   },
   {
-    name: "Chaffcutter – Single Blower Reverse Forward Gear (Motor Operated, BRP - CC - 5HP - 02)",
+    name: "Chaffcutter – Single Blower Reverse Forward Gear (Motor Operated)",
     image: cc10,
     description: {
       type: "Motor Operated",
@@ -217,7 +217,7 @@ const chaffcutters = [
     },
   },
   {
-    name: "Chaffcutter – Double Blower Reverse Forward Gear (Engine Operated, BRP - CC - 5HP - 03)",
+    name: "Chaffcutter – Double Blower Reverse Forward Gear (Engine Operated)",
     image: cc11,
     description: {
       type: "Engine Operated",

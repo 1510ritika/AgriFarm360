@@ -18,17 +18,21 @@ export default function JoinUs({ onEnquireClick }) {
     const experience = formData.get("experience");
 
     let message = `Want to join as ${openForm === "dealer" ? "Dealer" : "Agent"}%0A`;
-    message += `Name: ${name}%0APhone: ${phone}%0AEmail: ${email}%0ACompany: ${company}%0A`;
+    if (name) message += `Name: ${name}%0A`;
+    if (phone) message += `Phone: ${phone}%0A`;
+    if (email) message += `Email: ${email}%0A`;
+    if (company) message += `Company: ${company}%0A`;
     if (openForm === "dealer" && region) message += `Preferred Region: ${region}%0A`;
     if (openForm === "agent" && experience) message += `Experience: ${experience}%0A`;
+    if (country) message += `Country: ${country}%0A`;
 
     window.open(`https://wa.me/918073684699?text=${message}`, "_blank");
     closeModal();
   };
 
   return (
-    <div className="container mx-auto px-6 py-12">
-      <h1 className="text-3xl font-bold text-center mb-10">Join Us</h1>
+    <div className="container mx-auto px-6 py-12 mt-24"> {/* mt-24 pushes it below the fixed navbar */}
+  <h1 className="text-3xl font-bold text-center  text-green-700 mb-10">Join Us</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Dealership */}
@@ -54,7 +58,7 @@ export default function JoinUs({ onEnquireClick }) {
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
               <li>No physical display needed</li>
               <li>No investment by agent</li>
-              <li>Reference products to customers</li>
+              <li>Refer products to customer</li>
               <li>No shop required</li>
               <li>Work based on incentive</li>
             </ul>
@@ -84,12 +88,12 @@ export default function JoinUs({ onEnquireClick }) {
               <button onClick={closeModal} className="absolute top-3 right-3 text-gray-500 hover:text-gray-700">✕</button>
               <h2 className="text-xl font-semibold mb-4 text-center">Apply as {openForm === "dealer" ? "Dealer" : "Agent"}</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <input type="text" name="name" placeholder="Full Name" className="w-full p-2 border rounded" required />
-                <input type="email" name="email" placeholder="Email" className="w-full p-2 border rounded" required />
-                <input type="tel" name="phone" placeholder="Phone Number" className="w-full p-2 border rounded" required />
-                <input type="text" name="company" placeholder="Current Profession" className="w-full p-2 border rounded" required />
+                <input type="text" name="name" placeholder="Full Name" className="w-full p-2 border rounded" />
+                <input type="email" name="email" placeholder="Email" className="w-full p-2 border rounded" />
+                <input type="tel" name="phone" placeholder="Phone Number" className="w-full p-2 border rounded" />
+                <input type="text" name="company" placeholder="Current Profession" className="w-full p-2 border rounded" />
                 <input type="text" name="region" placeholder="Location" className="w-full p-2 border rounded" />
-                <input type="text" name="country" placeholder="Country" className="w-full p-2 border rounded" required />
+                <input type="text" name="country" placeholder="Country" className="w-full p-2 border rounded" />
                 {openForm === "agent" && <input type="text" name="experience" placeholder="Sales Experience" className="w-full p-2 border rounded" /> }
                 <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit</button>
               </form>

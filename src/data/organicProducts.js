@@ -10,8 +10,9 @@ import certificateImg from "../assets/cowdung_certificate.jpg"; // Certification
 const organicProducts = [
   {
     name: "Fermented Organic Manure (FOM)",
-    image: fomImg,
+    images: [fomImg],
     description: {
+      
       application: "All types of crops and soil types",
       benefits:
         "Improves NPK, increases Organic Carbon, enhances soil fertility",
@@ -22,7 +23,7 @@ const organicProducts = [
   },
   {
     name: "Ghanajeevamruta (Dry Bio-Manure)",
-    image: ghanajeevamrutaImg,
+    images: [ghanajeevamrutaImg],
     description: {
       application: "Soil amendment and plant tonic",
       benefits: "Stimulates microbial activity, improves root strength",
@@ -33,7 +34,7 @@ const organicProducts = [
   },
   {
     name: "Cow Dung Cake (Go Kanda)",
-    image: cowDungCakeImg,
+    images: [cowDungCakeImg],
     description: {
       application:
         "Homa/Yajna, agnihotra, traditional cooking, and as fuel",
@@ -45,7 +46,7 @@ const organicProducts = [
   },
   {
     name: "Go Mutra Arc (Distilled Cow Urine)",
-    image: goMutraImg,
+    images: [goMutraImg],
     description: {
       application: "Purification, spiritual, and mosquito repellent",
       benefits: "No chemical residue, safe for human use",
@@ -55,7 +56,8 @@ const organicProducts = [
   },
   {
     name: "Liquid Fermented Organic Manure (LFOM)",
-    image: lfomImg,
+    images
+    : [lfomImg],
     description: {
       application: "Vegetables, fruits, and plantation crops",
       dosage: "250 ml per 15 L of water",
@@ -66,7 +68,8 @@ const organicProducts = [
   },
   {
     name: "Organic Certification",
-    image: certificateImg,
+    images
+    : [certificateImg],
     isCertificate: true, // ✅ This makes it highlighted in Products.jsx
     description: {
       highlights: "Certified 100% organic and safe for farming, verified by lab tests",

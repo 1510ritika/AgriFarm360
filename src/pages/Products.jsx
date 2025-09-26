@@ -34,10 +34,10 @@ export default function Products() {
     selectedCategory === "Organic Jaggery";
 
   return (
-    <section className="container-max py-10">
+    <section className="container-max py-10 mt-24">
       <h1 className="text-3xl font-bold text-center text-green-700 mb-8">
         Our Products
-      </h1>
+      </h1> 
 
       {/* Category list vertically */}
       <div className="flex flex-col items-center gap-4 mb-10">
@@ -73,52 +73,33 @@ export default function Products() {
             </h2>
 
             {isOrganicCategory ? (
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div className="space-y-6">
     {selectedCategoryData.map((product, idx) => (
-      <div
-        key={`organic-${idx}`}
-        className="flex flex-col gap-2 items-center text-center"
-      >
-        {/* Images */}
-        {product.images && product.images.length > 0 ? (
-          <div
-            className={`grid gap-4 justify-center items-center ${
-              selectedCategory === "Organic Papaya"
-                ? "grid-cols-2"
-                : "grid-cols-1"
-            }`}
-          >
+      <div key={idx}>
+        <h3 className="text-xl font-semibold text-green-700 mb-2">{product.name}</h3>
+
+        {/* Images Carousel */}
+        {product.images && product.images.length > 0 && (
+          <div className="flex overflow-x-auto gap-4 py-2">
             {product.images.map((img, i) => (
               <img
-                key={`img-${idx}-${i}`}
+                key={i}
                 src={img}
                 alt={`${product.name} image ${i + 1}`}
-                className="w-full max-h-60 object-contain rounded-lg p-1 mx-auto"
+                className="w-64 h-40 object-contain rounded-lg flex-shrink-0"
               />
             ))}
           </div>
-        ) : product.image ? (
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full max-h-60 object-contain rounded-lg mx-auto"
-          />
-        ) : null}
+        )}
 
-        {/* Videos */}
+        {/* Videos Carousel */}
         {product.videos && product.videos.length > 0 && (
-          <div
-            className={`grid gap-4 justify-center items-center ${
-              selectedCategory === "Organic Papaya"
-                ? "grid-cols-2"
-                : "grid-cols-1"
-            }`}
-          >
+          <div className="flex overflow-x-auto gap-4 py-2">
             {product.videos.map((vid, i) => (
               <video
-                key={`vid-${idx}-${i}`}
+                key={i}
                 controls
-                className="w-full max-h-60 rounded-lg p-1 mx-auto"
+                className="w-64 h-40 rounded-lg flex-shrink-0"
               >
                 <source src={vid} type="video/mp4" />
               </video>
@@ -126,7 +107,30 @@ export default function Products() {
           </div>
         )}
 
-                    <div className="flex justify-center mt-2">
+        {/* Product Description */}
+        <div className="text-gray-700 mt-2 space-y-1">
+          {Object.entries(product.description).map(([key, value], i) => (
+            <p key={i}>
+              <span className="font-semibold">{key}:</span> {value}
+            </p>
+          ))}
+          {/* Benefits List */}
+{product.benefits && product.benefits.length > 0 && (
+  <div className="mt-3">
+    <h4 className="font-semibold text-green-700">Benefits:</h4>
+    <ul className="list-disc list-inside text-gray-700">
+      {product.benefits.map((benefit, i) => (
+        <li key={i}>{benefit}</li>
+      ))}
+    </ul>
+  </div>
+)}
+
+        </div>
+
+        {/* Enquiry Button */}
+        {!product.isCertificate && (
+                    <div className="flex justify-center mt-4">
                       <button
                         onClick={() => setEnquiryProduct(product)}
                         className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
@@ -134,10 +138,13 @@ export default function Products() {
                         Contact for Enquiry
                       </button>
                     </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
+                  )}
+      </div>
+    ))}
+  </div>
+) : (
+  // …existing code for other categories
+
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {selectedCategoryData.map((product, index) => (
                   <div

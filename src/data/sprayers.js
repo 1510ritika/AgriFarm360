@@ -11,7 +11,7 @@ import sprayer8 from "../assets/sprayer7.png"; // HTP Power Sprayer BRP - HTP - 
 // ==================== PRODUCTS ====================
 const sprayers = [
   {
-    name: "Battery & Manual Operated Sprayer (BRP - BS - 01)",
+    name: "Battery & Manual Operated Sprayer",
     image: sprayer1,
     description: {
       model: "Manual & Battery operated",
@@ -27,7 +27,7 @@ const sprayers = [
     },
   },
   {
-    name: "2 Stroke Knapsack Sprayer (BRP - KS - 02)",
+    name: "2 Stroke Knapsack Sprayer ",
     image: sprayer2,
     description: {
       model: "Petrol Engine",
@@ -47,7 +47,7 @@ const sprayers = [
     },
   },
   {
-    name: "4 Stroke Knapsack Sprayer (BRP - KS(R) - 03)",
+    name: "4 Stroke Knapsack Sprayer ",
     image: sprayer3,
     description: {
       model: "Petrol Engine",
@@ -75,7 +75,7 @@ const sprayers = [
     },
   },
   {
-    name: "4 Stroke Knapsack Sprayer (BRP - KS(H) - 04)",
+    name: "4 Stroke Knapsack Sprayer ",
     image: sprayer4,
     description: {
       model: "Petrol Engine",
@@ -103,7 +103,7 @@ const sprayers = [
     },
   },
   {
-    name: "HTP Power Operated Sprayer (Petrol Engine, BRP - PSH - 05)",
+    name: "HTP Power Operated Sprayer (Petrol Engine)",
     image: sprayer5,
     description: {
       model: "Petrol Engine",
@@ -130,7 +130,7 @@ const sprayers = [
     },
   },
   {
-    name: "HTP Power Operated Sprayer (Diesel Engine, BRP - PSD - 06)",
+    name: "HTP Power Operated Sprayer (Diesel Engine)",
     image: sprayer6,
     description: {
       model: "Diesel Engine",
@@ -156,7 +156,7 @@ const sprayers = [
     },
   },
   {
-    name: "HTP Power Sprayer (BRP - HTP - 07)",
+    name: "HTP Power Sprayer ",
     image: sprayer7,
     description: {
       usage: "Agriculture",
@@ -168,7 +168,7 @@ const sprayers = [
     },
   },
   {
-    name: "HTP Power Sprayer (BRP - HTP - 08)",
+    name: "HTP Power Sprayer",
     image: sprayer8,
     description: {
       usage: "Agriculture",

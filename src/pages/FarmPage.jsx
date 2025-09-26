@@ -79,17 +79,18 @@ export default function FarmPage() {
         Amrit Goat & Sheep Farm
       </h1>
 
-      {/* Google Maps link */}
-      <div className="text-center">
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=Kotyal%20road%2C%20opp.%20HP%20Gas%2C%20near%20Kencharayanna%20Gudi%2C%20Kanamadi%2C%20Vijayapura"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          View Location on Google Maps
-        </a>
-      </div>
+     
+      {/* Embedded Google Map */}
+          <div className="mt-4 text-center">
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=Shri+Kencharaya+Temple,+Kanamadi,+Karnataka+586114"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+            >
+              Get Directions
+            </a>
+          </div>
 
       {/* Farm Gallery */}
       <section className="p-6 bg-green-50 rounded-xl shadow-lg">
