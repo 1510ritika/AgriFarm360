@@ -21,26 +21,21 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen relative">
-      {/* Navbar */}
       <Navbar />
 
-      {/* Main Content */}
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home onEnquireClick={openEnquiryModal} />} />
           <Route path="/products" element={<Products onEnquireClick={openEnquiryModal} />} />
           <Route path="/farm" element={<FarmPage onEnquireClick={openEnquiryModal} />} />
-          <Route path="/about" element={<About onEnquireClick={openEnquiryModal} />} />
-          <Route path="/contact" element={<Contact onEnquireClick={openEnquiryModal} />} />
-          <Route path="/enquiry" element={<EnquiryForm onEnquireClick={openEnquiryModal} />} />
-          <Route path="/join-us" element={<JoinUs onEnquireClick={openEnquiryModal} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/enquiry" element={<EnquiryForm />} />
+          <Route path="/join-us" element={<JoinUs />} />
         </Routes>
       </main>
 
-      {/* Footer */}
       <Footer />
-
-      {/* Floating YouTube & WhatsApp Buttons */}
       <FloatingButtons />
 
       {/* Enquiry Modal */}

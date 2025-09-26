@@ -39,7 +39,7 @@ const organicJaggery = [
     name: "Organic Jaggery Certification 1",
     images: [jaggeryCert1],
     description: {
-      highlights: "Certified organic by ABC Organic Certifiers.",
+      highlights: "Certified organic by ENCON Organic Certifiers.",
     },
     isCertificate: true,
   },

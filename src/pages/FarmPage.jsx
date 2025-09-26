@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// Import images and videos
+// Images & Videos
 import goats1 from "../assets/goats1.jpg";
 import goats2 from "../assets/goats2.jpg";
 import sheep1 from "../assets/sheep1.jpg";
@@ -15,7 +15,7 @@ import farmVideo1 from "../assets/farm-video1.mp4";
 import farmVideo2 from "../assets/farm-video2.mp4";
 import farmVideo3 from "../assets/farm-video3.mp4";
 
-// Farm media
+// Farm Media
 const farmMedia = [
   { type: "image", src: goats1, alt: "Goats grazing" },
   { type: "image", src: goats2, alt: "Goat herd" },
@@ -31,34 +31,30 @@ const farmMedia = [
   { type: "video", src: farmVideo3, alt: "Farm tour 3" },
 ];
 
-// Livestock categories
+// Livestock
 const livestockCategories = [
   {
     name: "Goats",
-    description:
-      "Healthy, vaccinated goats available for breeding or meat purposes.",
+    description: "Healthy, vaccinated goats available for breeding or meat purposes.",
     priceRange: "₹8,000 - ₹15,000",
     image: goats1,
   },
   {
     name: "Sheep",
-    description:
-      "Healthy sheep for sale, suitable for meat or breeding purposes.",
+    description: "Healthy sheep for sale, suitable for meat or breeding purposes.",
     priceRange: "₹7,000 - ₹12,000",
     image: sheep1,
   },
 ];
 
-export default function FarmPage() {
+export default function FarmPage({ onEnquireClick }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [enquiryProduct, setEnquiryProduct] = useState(null);
 
-  const openModal = (index) => {
-    setCurrentIndex(index);
-    setModalOpen(true);
-  };
+  const openModal = (index) => setCurrentIndex(index) || setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+
   const prevMedia = () =>
     setCurrentIndex((prev) => (prev === 0 ? farmMedia.length - 1 : prev - 1));
   const nextMedia = () =>
@@ -69,28 +65,26 @@ export default function FarmPage() {
 
   const whatsappNumber = "918073684699";
   const whatsappMessage = enquiryProduct
-    ? `Hello! I am interested in your product: ${enquiryProduct.name}. Can you provide more details?`
+    ? `Hello! I am interested in: ${enquiryProduct.name}`
     : "";
 
   return (
     <div className="min-h-screen bg-green-100 pt-24 space-y-12">
-      {/* Page Title */}
       <h1 className="text-3xl font-bold text-center text-green-800 mb-8">
         Amrit Goat & Sheep Farm
       </h1>
 
-     
-      {/* Embedded Google Map */}
-          <div className="mt-4 text-center">
-            <a
-              href="https://www.google.com/maps/dir/?api=1&destination=Shri+Kencharaya+Temple,+Kanamadi,+Karnataka+586114"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
-            >
-              Get Directions
-            </a>
-          </div>
+      {/* Directions */}
+      <div className="mt-4 text-center">
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=Shri+Kencharaya+Temple,+Kanamadi,+Karnataka+586114"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+        >
+          Get Directions
+        </a>
+      </div>
 
       {/* Farm Gallery */}
       <section className="p-6 bg-green-50 rounded-xl shadow-lg">
@@ -126,7 +120,7 @@ export default function FarmPage() {
         </div>
       </section>
 
-      {/* Modal Slider */}
+      {/* Media Modal */}
       {modalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center z-50 p-4 overflow-auto">
           <div className="relative max-w-4xl w-full">
@@ -174,9 +168,7 @@ export default function FarmPage() {
                 <div
                   key={idx}
                   className={`w-20 h-20 border-2 rounded-lg cursor-pointer ${
-                    idx === currentIndex
-                      ? "border-green-500"
-                      : "border-transparent"
+                    idx === currentIndex ? "border-green-500" : "border-transparent"
                   }`}
                   onClick={() => setCurrentIndex(idx)}
                 >
@@ -200,7 +192,7 @@ export default function FarmPage() {
         </div>
       )}
 
-      {/* Livestock Section */}
+      {/* Livestock */}
       <section className="p-6 bg-green-50 rounded-xl shadow-lg">
         <h2 className="text-2xl font-bold text-green-700 mb-6 text-center">
           Livestock for Sale
@@ -216,13 +208,9 @@ export default function FarmPage() {
                 alt={item.name}
                 className="h-40 w-full object-cover rounded-lg mb-4"
               />
-              <h3 className="text-lg font-semibold text-green-700 mb-2">
-                {item.name}
-              </h3>
+              <h3 className="text-lg font-semibold text-green-700 mb-2">{item.name}</h3>
               <p className="text-gray-700 mb-2">{item.description}</p>
-              <p className="text-gray-700 font-semibold mb-2">
-                Price Range: {item.priceRange}
-              </p>
+              <p className="text-gray-700 font-semibold mb-2">Price: {item.priceRange}</p>
               <button
                 onClick={() => openEnquiryModal(item)}
                 className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
@@ -247,9 +235,7 @@ export default function FarmPage() {
             <h3 className="text-xl font-bold text-green-700 mb-4">
               Enquire about {enquiryProduct.name}
             </h3>
-            <p className="text-gray-700 mb-6">
-              How would you like to contact us?
-            </p>
+            <p className="text-gray-700 mb-6">How would you like to contact us?</p>
             <div className="flex justify-around">
               <a
                 href="tel:8073684699"
@@ -258,9 +244,7 @@ export default function FarmPage() {
                 Call
               </a>
               <a
-                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-                  whatsappMessage
-                )}`}
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
