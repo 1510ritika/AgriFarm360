@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/AgriFarm360 Logo.png"; // Adjust path if needed
+import logo from "../assets/AgriFarm360 Logo.png";
 
-// Nav links config
+// Navigation links
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Products", path: "/products" },
@@ -17,11 +17,15 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-        <div className="container mx-auto px-6 py-3 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           {/* Logo + Site Name */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3">
-            <img src={logo} alt="AgriFarm360 Logo" className="h-10 w-auto" />
-            <h1 className="text-lg sm:text-xl font-bold text-green-700">
+          <Link to="/" className="flex items-center space-x-2">
+            <img
+              src={logo}
+              alt="AgriFarm360 Logo"
+              className="h-8 sm:h-10 w-auto"
+            />
+            <h1 className="text-base sm:text-xl font-bold text-green-700 whitespace-nowrap">
               AgriFarm360
             </h1>
           </Link>
@@ -68,7 +72,7 @@ export default function Navbar() {
         )}
       </nav>
 
-      {/* Spacer div to prevent content overlap with fixed navbar */}
+      {/* Spacer to offset fixed navbar */}
       <div className="h-16 sm:h-20"></div>
     </>
   );

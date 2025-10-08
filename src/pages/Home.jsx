@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FloatingButtons from "../components/FloatingButtons";
+import { Link } from "react-router-dom";
+
+
 
 import logo from "../assets/AgriFarm360 Logo.png";
 
@@ -147,12 +150,12 @@ export default function Home() {
             A Complete Modern Integrated Farming Ecosystem
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a
-              href="/products"
-              className="bg-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
-            >
-              View Products
-            </a>
+            <Link
+  to="/products"
+  className="bg-green-600 px-6 py-3 rounded-lg font-semibold text-white hover:bg-green-700 transition"
+>
+  View Products
+</Link>
             <button
               onClick={() => openForm()}
               className="bg-yellow-500 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition"

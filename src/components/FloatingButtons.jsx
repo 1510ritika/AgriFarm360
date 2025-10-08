@@ -1,7 +1,8 @@
-import { FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { FaWhatsapp, FaYoutube, FaEnvelope } from "react-icons/fa";
 
 export default function FloatingButtons() {
   const whatsappNumber = "918073684699";
+  const emailAddress = "brp.exports.1@gmail.com";
 
   return (
     <div className="fixed bottom-8 right-8 flex flex-col items-center gap-4 z-50">
@@ -15,7 +16,6 @@ export default function FloatingButtons() {
         >
           <FaYoutube size={40} />
         </a>
-        {/* Tooltip */}
         <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
           Visit our channel
         </span>
@@ -31,9 +31,25 @@ export default function FloatingButtons() {
         >
           <FaWhatsapp size={40} />
         </a>
-        {/* Tooltip */}
         <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
           Chat with us on WhatsApp
+        </span>
+      </div>
+
+      {/* Email Button */}
+      <div className="relative group">
+        <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=brp.exports.1@gmail.com&su=Inquiry&body=Hello%2C%20I%20would%20like%20to%20know%20more%20about..."
+  target="_blank"
+  rel="noopener noreferrer"
+
+  className="bg-blue-500 text-white p-5 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center"
+>
+  <FaEnvelope size={40} />
+</a>
+
+        <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+          Send us an Email
         </span>
       </div>
     </div>
