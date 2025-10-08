@@ -7,8 +7,9 @@ export default function Contact() {
         {/* Contact Info */}
         <div className="card">
           <h2 className="font-semibold text-lg">Phone</h2>
-          <p>Farm Manager: 8660570728</p>
-          <p>Agri Manager: 6363475984</p>
+          <p>Mr. Satish Patil (Owner): 9620313227</p>
+          <p>Mr. Mallu Tuppad (Farm Manager): 8660570728</p>
+          
           <div className="mt-4">
             <a href="/enquiry" className="btn-primary">
               Send an Enquiry

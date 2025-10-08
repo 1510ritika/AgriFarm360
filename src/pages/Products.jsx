@@ -5,6 +5,7 @@ import organicProducts from "../data/organicProducts";
 import organicPapaya from "../data/organicPapaya";
 import organicJaggery from "../data/organicJaggery";
 import sprayers from "../data/sprayers";
+import farmProducts from "../data/farmProducts"; // ✅ new import
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -19,6 +20,7 @@ export default function Products() {
     { name: "Organic Papaya", data: organicPapaya },
     { name: "Organic Jaggery", data: organicJaggery },
     { name: "Sprayers & HTP Pumps", data: sprayers },
+    { name: "Goat & Sheep Farm", data: farmProducts }, // ✅ new category
   ];
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function Products() {
     <section className="container-max py-10 mt-24">
       <h1 className="text-3xl font-bold text-center text-green-700 mb-8">
         Our Products
-      </h1> 
+      </h1>
 
       {/* Category list vertically */}
       <div className="flex flex-col items-center gap-4 mb-10">
@@ -72,79 +74,116 @@ export default function Products() {
               {selectedCategory}
             </h2>
 
-            {isOrganicCategory ? (
-  <div className="space-y-6">
-    {selectedCategoryData.map((product, idx) => (
-      <div key={idx}>
-        <h3 className="text-xl font-semibold text-green-700 mb-2">{product.name}</h3>
+            {/* Goat & Sheep Farm Category */}
+            {selectedCategory === "Goat & Sheep Farm" ? (
+  <div className="flex flex-col gap-6 items-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+      {selectedCategoryData.map((item, idx) =>
+        item.type === "video" ? (
+          <video
+            key={idx}
+            src={item.src}
+            controls
+            className="h-40 w-full object-cover rounded-lg"
+          />
+        ) : (
+          <img
+            key={idx}
+            src={item.src}
+            alt={item.alt}
+            className="h-40 w-full object-cover rounded-lg"
+          />
+        )
+      )}
+    </div>
 
-        {/* Images Carousel */}
-        {product.images && product.images.length > 0 && (
-          <div className="flex overflow-x-auto gap-4 py-2">
-            {product.images.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt={`${product.name} image ${i + 1}`}
-                className="w-64 h-40 object-contain rounded-lg flex-shrink-0"
-              />
-            ))}
-          </div>
-        )}
-
-        {/* Videos Carousel */}
-        {product.videos && product.videos.length > 0 && (
-          <div className="flex overflow-x-auto gap-4 py-2">
-            {product.videos.map((vid, i) => (
-              <video
-                key={i}
-                controls
-                className="w-64 h-40 rounded-lg flex-shrink-0"
-              >
-                <source src={vid} type="video/mp4" />
-              </video>
-            ))}
-          </div>
-        )}
-
-        {/* Product Description */}
-        <div className="text-gray-700 mt-2 space-y-1">
-          {Object.entries(product.description).map(([key, value], i) => (
-            <p key={i}>
-              <span className="font-semibold">{key}:</span> {value}
-            </p>
-          ))}
-          {/* Benefits List */}
-{product.benefits && product.benefits.length > 0 && (
-  <div className="mt-3">
-    <h4 className="font-semibold text-green-700">Benefits:</h4>
-    <ul className="list-disc list-inside text-gray-700">
-      {product.benefits.map((benefit, i) => (
-        <li key={i}>{benefit}</li>
-      ))}
-    </ul>
+    {/* Single Enquiry Button at the end */}
+    <button
+      onClick={() => setEnquiryProduct({ name: "Goat & Sheep Farm" })}
+      className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition mt-4"
+    >
+      Contact for Enquiry
+    </button>
   </div>
-)}
 
-        </div>
+            
+              
+            ) : isOrganicCategory ? (
+              // Organic Products Category
+              <div className="space-y-6">
+                {selectedCategoryData.map((product, idx) => (
+                  <div key={idx}>
+                    <h3 className="text-xl font-semibold text-green-700 mb-2">
+                      {product.name}
+                    </h3>
 
-        {/* Enquiry Button */}
-        {!product.isCertificate && (
-                    <div className="flex justify-center mt-4">
-                      <button
-                        onClick={() => setEnquiryProduct(product)}
-                        className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
-                      >
-                        Contact for Enquiry
-                      </button>
+                    {/* Images Carousel */}
+                    {product.images && product.images.length > 0 && (
+                      <div className="flex overflow-x-auto gap-4 py-2">
+                        {product.images.map((img, i) => (
+                          <img
+                            key={i}
+                            src={img}
+                            alt={`${product.name} image ${i + 1}`}
+                            className="w-64 h-40 object-contain rounded-lg flex-shrink-0"
+                          />
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Videos Carousel */}
+                    {product.videos && product.videos.length > 0 && (
+                      <div className="flex overflow-x-auto gap-4 py-2">
+                        {product.videos.map((vid, i) => (
+                          <video
+                            key={i}
+                            controls
+                            className="w-64 h-40 rounded-lg flex-shrink-0"
+                          >
+                            <source src={vid} type="video/mp4" />
+                          </video>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Description */}
+                    <div className="text-gray-700 mt-2 space-y-1">
+                      {Object.entries(product.description).map(([key, value], i) => (
+                        <p key={i}>
+                          <span className="font-semibold">{key}:</span> {value}
+                        </p>
+                      ))}
+
+                      {/* Benefits */}
+                      {product.benefits && product.benefits.length > 0 && (
+                        <div className="mt-3">
+                          <h4 className="font-semibold text-green-700">
+                            Benefits:
+                          </h4>
+                          <ul className="list-disc list-inside text-gray-700">
+                            {product.benefits.map((benefit, i) => (
+                              <li key={i}>{benefit}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
-                  )}
-      </div>
-    ))}
-  </div>
-) : (
-  // …existing code for other categories
 
+                    {!product.isCertificate && (
+                      <div className="flex justify-center mt-4">
+                        <button
+                          onClick={() => setEnquiryProduct(product)}
+                          className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+                        >
+                          Contact for Enquiry
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              // Default layout for other categories
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {selectedCategoryData.map((product, index) => (
                   <div
@@ -240,20 +279,18 @@ export default function Products() {
               {typeof selectedProduct.description === "string" ? (
                 <p>{selectedProduct.description}</p>
               ) : (
-                Object.entries(selectedProduct.description).map(
-                  ([key, value], i) => (
-                    <p key={i}>
-                      <span className="font-semibold capitalize">
-                        {key.replace(/([A-Z])/g, " $1")}:
-                      </span>{" "}
-                      {typeof value === "object"
-                        ? JSON.stringify(value)
-                            .replace(/[{}"]/g, "")
-                            .replace(/,/g, ", ")
-                        : value}
-                    </p>
-                  )
-                )
+                Object.entries(selectedProduct.description).map(([key, value], i) => (
+                  <p key={i}>
+                    <span className="font-semibold capitalize">
+                      {key.replace(/([A-Z])/g, " $1")}:
+                    </span>{" "}
+                    {typeof value === "object"
+                      ? JSON.stringify(value)
+                          .replace(/[{}"]/g, "")
+                          .replace(/,/g, ", ")
+                      : value}
+                  </p>
+                ))
               )}
             </div>
 
