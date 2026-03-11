@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://agrifarm360.in/sitemap.xml
