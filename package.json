@@ -4,13 +4,13 @@
   "private": true,
   "homepage": "https://1510ritika.github.io/agrifarm360",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "node ./node_modules/vite/bin/vite.js build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
+  "start": "vite",
+  "dev": "vite",
+  "build": "node ./node_modules/vite/bin/vite.js build",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
   "dependencies": {
     "@emailjs/browser": "3.12.1",
     "axios": "^1.12.2",
