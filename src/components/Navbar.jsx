@@ -17,15 +17,15 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="hidden md:flex gap-6 items-center text-green-700 font-semibold ml-6">
           {/* Logo + Site Name */}
-          <Link to="/" className="flex items-center space-x-2 min-w-0">
+          <Link to="/" className="flex items-center space-x-2 min-w-0 flex-shrink-0">
             <img
               src={logo}
               alt="AgriFarm360 Logo"
               className="h-7 sm:h-10 w-auto"
             />
-            <h1 className="text-sm sm:text-xl font-bold text-green-700 truncate">
+            <h1 className="text-sm sm:text-xl font-bold text-green-700 max-w-[120px] sm:max-w-none truncate">
               AgriFarm360
             </h1>
           </Link>
